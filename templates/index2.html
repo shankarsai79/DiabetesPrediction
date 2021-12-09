@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Diabetes Prediction</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="static/bootstrap.css"/>
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="static/style.css" />
+	<style>
+body {
+  background-image: url('static/diabetes_1.jpg');
+}
+</style>
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<script type="text/JavaScript">
+		function TestsFunction() {
+    var T = document.getElementById("TestsDiv");
+    T.style.display = "block";  // <-- Set it to block
+}
+		</script>
+
+</head>
+
+<body>
+	<div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div style="margin-bottom: 10px;" class="row">
+					<div class="booking-form">
+						<h2 style="color: aliceblue; text-align: center;font-family: 'PT Sans', sans-serif;">Diabetes Prediction</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="booking-form">
+						<form action="\predict" method="post">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Pregnencies</span>
+										<input type="text" id="preg" name="preg" required="required">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Glucose</span>
+										<input type="text" id="glu" name="glu" required="required">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label">BloodPressure</span>
+										<input type="text" id="bp" name="bp" required="required">
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label">SkinThickness</span>
+										<input type="text" id="skt" name="skt" required="required">
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<span class="form-label">Insulin</span>
+										<input type="text" id="Ins" name="Ins" required="required">
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label">BodyMassIndex</span>
+										<input type="text" id="BMI" name="BMI" required="required">
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label">DiabetesPedegreeFunction</span>
+										<input type="text" id="DPF" name="DPF" required="required">
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label">Age</span>
+										<input type="text" id="age" name="age" required="required">
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+
+								<div class="col-md-3">
+									<div class="form-btn">
+										<button  onclick="TestsFunction()" type="submit" class="submit-btn">Predict</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div  id="TestsDiv" style="margin-top: 10px; display:{{status}}" class="row">
+					<div class="booking-form">
+						<h2 style="color: aliceblue; text-align: center;font-family: 'PT Sans', sans-serif;">{{ prediction_text }}</h2>
+					</div>
+			</div>
+		</div>
+	</div>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
